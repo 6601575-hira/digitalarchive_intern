@@ -6,9 +6,20 @@
 </head>
 <body>
 
-<div id="ph1">
-	<img id="tmp">
-</div>
+
+<p style="position: relative;">
+	<div id="ph1">
+		<img id="tmp">
+	</div>
+	
+	<span style="position: absolute; top: 15px; left:15px; width: 250px; font-size: 30px; background-color: rgba(0,0,0,0.55); ">
+		<a href="../nishiguchi/index.html">
+		<font color="#ffffff">
+			&nbsp;ano_smp_nishiguchi&nbsp;
+		</a>
+	</span>
+</p>
+
 
 <script type="text/javascript" >
     
@@ -60,7 +71,13 @@
 		}
 	};
 	
-	
+	<!--アノテーションクリック処理
+	function btnClick(obj){
+		var path =  "../" + obj.value + "/index.html";
+		console.log(path);
+		window.location.href = path;
+	}
+	-->
 </script>
 
 </body>
