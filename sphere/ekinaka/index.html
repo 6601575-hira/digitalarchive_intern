@@ -1,24 +1,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
+<meta charset="UTF-8" />
 <script type="text/javascript" src="../../js/three.min.js"></script>
 <script type="text/javascript" src="../../js/thview.js"></script>
+<script src="../../js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="./js/read_json2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/annotation.css">
+
 <title>ricoh intern</title>
 </head>
 <body>
 
+<div id="ph1">
+	<img id="tmp">
+</div>
 
-<p style="position: relative;">
-	<div id="ph1">
-		<img id="tmp">
-	</div>
-	
-	<span style="position: absolute; top: 15px; left:15px; width: 250px; font-size: 30px; background-color: rgba(0,0,0,0.55); ">
-		<a href="../nishiguchi/index.html">
-		<font color="#ffffff">
-			&nbsp;ano_smp_nishiguchi&nbsp;
-		</a>
-	</span>
-</p>
+<div class="ano", id="pAno">
+	Current&nbsp;Panorama&nbsp;Image
+</div>
+<div class="ano", id="aAno">
+	<!--Around&nbsp;Panorama&nbsp;Image-->
+</div>
 
 
 <script type="text/javascript" >
@@ -70,14 +72,6 @@
           window.location.href = "../nishiguchi/index.html";
 		}
 	};
-	
-	<!--アノテーションクリック処理
-	function btnClick(obj){
-		var path =  "../" + obj.value + "/index.html";
-		console.log(path);
-		window.location.href = path;
-	}
-	-->
 </script>
 
 </body>

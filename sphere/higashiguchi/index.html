@@ -1,25 +1,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
 <head>
+<meta charset="UTF-8" />
+<script type="text/javascript" src="../../js/three.min.js"></script>
+<script type="text/javascript" src="../../js/thview.js"></script>
+<script src="../../js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="./js/read_json2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/annotation.css">
 
 <title>ricoh intern</title>
 </head>
 <body>
 
-<p style="position: relative;">
-	<div id="ph1">
-		<img id="tmp">
-	</div>
-	
-	<span style="position: absolute; top: 15px; left:15px; width: 210px; font-size: 30px; background-color: rgba(0,0,0,0.55); ">
-		<a href="../hunsui/index.html">
-		<font color="#ffffff">
-			&nbsp;ano_smp_hunsui&nbsp;
-		</a>
-	</span>
-</p>
+<div id="ph1">
+	<img id="tmp">
+</div>
 
-<script type="text/javascript" src="../../js/three.min.js"></script>
-<script type="text/javascript" src="../../js/thview.js"></script>
+<div class="ano", id="pAno">
+	Current&nbsp;Panorama&nbsp;Image
+</div>
+<div class="ano", id="aAno">
+	<!--Around&nbsp;Panorama&nbsp;Image-->
+</div>
+
+
 <script type="text/javascript" >
     
 	var img1 = new ThView({
@@ -27,15 +30,19 @@
         	file:'equirectangular.jpg',
         	width:800,
         	height:400,
-        	firstview:270,
-	
+			firstview:150,
 			      });
+	img1.cameraDir.x = 0;
+	img1.cameraDir.y = 0;
+	img1.cameraDir.z = 0;
 	
 	var targetList = []; 		      
 	var geometry1 = new THREE.SphereGeometry( 8, 30, 30 );
-	var material1 = new THREE.MeshBasicMaterial( {color: 0x7fff00} );
+	var material1 = new THREE.MeshBasicMaterial({color: 0x7fff00});
 	var sphere = new THREE.Mesh( geometry1, material1 );
-	sphere.position.set(60,0,0);
+	sphere.position.set(-30,0,-52);
+	
+	
 	img1.scene.add( sphere );		
 	
 	
@@ -47,11 +54,14 @@
 	e.preventDefault();
 
 	var raycaster = new THREE.Raycaster();
+	
 	var rect = e.target.getBoundingClientRect();    
 	var mouse = new THREE.Vector2();
        
         mouse.x =  e.clientX - rect.left;
         mouse.y =  e.clientY - rect.top;
+        
+
 		mouse.x =   (mouse.x / renderer.domElement.width) * 2 -1;
 		mouse.y = - (mouse.y / renderer.domElement.height) * 2 +1;
 		raycaster.setFromCamera(mouse, img1.camera);
@@ -62,32 +72,6 @@
           window.location.href = "../hunsui/index.html";
 		}
 	};
-
-	img1.element.onmouseover = function(e) {
-	
-	e.preventDefault();
-
-	var raycaster = new THREE.Raycaster();
-	var rect = e.target.getBoundingClientRect();    
-	var mouse = new THREE.Vector2();
-       
-        mouse.x =  e.clientX - rect.left;
-        mouse.y =  e.clientY - rect.top;
-		mouse.x =   (mouse.x / renderer.domElement.width) * 2 -1;
-		mouse.y = - (mouse.y / renderer.domElement.height) * 2 +1;
-		raycaster.setFromCamera(mouse, img1.camera);
- 
-		var intersects = raycaster.intersectObjects(targetList);
-		if(intersects.length >0) {
-  	   	          
-          window.location.href = "../hunsui/index.html";
-		}
-	};
-
-
-
-	
-	
 </script>
 
 </body>

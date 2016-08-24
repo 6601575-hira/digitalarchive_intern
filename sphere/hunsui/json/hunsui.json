@@ -1,0 +1,28 @@
+{"ano":[
+	{	"id":1,
+		"name":"ekinaka",
+		"val":"aPano",
+		"url":"../ekinaka/index.html"},
+
+	{	"id":2,
+		"name":"nishiguchi",
+		"val":"aPano",
+	"url":"../nishiguchi/index.html"},
+
+	{	"id":3,
+		"name":"nishiguchioku",
+		"val":"aPano",
+		"url":"../nishiguchioku/index.html"},
+
+	{	"id":4,
+		"name":"higashiguchi",
+		"val":"aPano",
+		"url":"../higashiguchi/index.html"},
+	
+	{	"id":5,
+		"name":"hunsui",
+		"val":"cPano",
+		"url":"../hunsui/index.html"}
+		
+	]
+}
