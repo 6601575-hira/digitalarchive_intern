@@ -7,6 +7,7 @@ $(function(){
 	//var txt = "";
 	var cPano = "cPano";
 	var aPano = "aPano";
+	var sound = "sound";
 	
 	for (var i=0; i<myData.ano.length; i++){
 		console.log(myData.ano[i]);
@@ -19,6 +20,11 @@ $(function(){
 			var txt = "";
 			txt = txt + "<a id=\"aPano" + myData.ano[i].id + "\" href=\"" + myData.ano[i].url + "\">" + myData.ano[i].name + "</a><br>";
 			document.getElementById("aAno").innerHTML += txt;
+		}
+		if(myData.ano[i].val == sound){
+			var txt = "";
+			txt = txt + "<p><input type=\"button\" value=\"" + myData.ano[i].name + "\" onclick=\"soundCtrl()\"></p><br>";
+			document.getElementById("sound").innerHTML += txt;
 		}
 	}
 	

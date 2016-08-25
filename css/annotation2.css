@@ -1,0 +1,33 @@
+#content #ph1{
+	width: 800px;
+	height: 400px;
+	position: relative;
+}
+
+#content #cPano{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-family: Meirio;
+	font-size: 30px;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.55);
+}
+
+#content #aPano{
+	position: absolute;
+	top: 0;
+	right :800;
+	align: right;
+	font-family: Meirio;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.25);
+}
+
+a:link { color: #0000ff; }
+a:visited { color: #000080; }
+a:hover { color: #ff0000; }
+a:active { color: #ff8000; }
+
+
