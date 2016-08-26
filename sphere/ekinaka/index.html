@@ -4,7 +4,7 @@
 <script type="text/javascript" src="../../js/three.min.js"></script>
 <script type="text/javascript" src="../../js/thview.js"></script>
 <script src="../../js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="./js/read_json2.js"></script>
+<script type="text/javascript" src="../../js/sphere.js"></script>
 <link rel="stylesheet" type="text/css" href="../../css/annotation.css">
 
 <title>ricoh intern</title>
@@ -15,103 +15,11 @@
 	<div id="ph1">
 		<img id="tmp">
 	</div>
-
-	<div class="ano", id="pAno">
-		Current&nbsp;Panorama&nbsp;Image
-	</div>
-	<div class="ano", id="aAno"></div>
-	<div class="ano", id="sound"></div>
+	<div id="currentPanoramaImage"></div>
+	<div id="aroundPanoramaImage"></div>
+	<div id="sound"></div>
 </div>
 
-<script type="text/javascript" >
-    
-	var img1 = new ThView({
-        	id:'ph1',
-        	file:'equirectangular.jpg',
-        	width:800,
-        	height:400,
-			firstview:150,
-		});
-	img1.cameraDir.x = 0;
-	img1.cameraDir.y = 0;
-	img1.cameraDir.z = 0;
-
-	var cat;
-	soundInit();
-
-	var targetList = []; 
-	var geometry1 = new THREE.SphereGeometry( 8, 30, 30 );
-	var material1 = new THREE.MeshBasicMaterial({color: 0x7fff00});
-	var sphere = new THREE.Mesh( geometry1, material1 );
-	sphere.position.set(-30,0,-52);
-	
-	img1.scene.add( sphere );
-	
-	targetList.push(sphere);
-	
-	//オブジェクトクリックによる全天球の切り替え処理
-	img1.element.onclick = function(e) {
-		
-		e.preventDefault();
-
-		var raycaster = new THREE.Raycaster();		
-		var rect = e.target.getBoundingClientRect();    
-		var mouse = new THREE.Vector2();
-
-        mouse.x =  e.clientX - rect.left;
-        mouse.y =  e.clientY - rect.top;
-
-		mouse.x =   (mouse.x / renderer.domElement.width) * 2 -1;
-		mouse.y = - (mouse.y / renderer.domElement.height) * 2 +1;
-		
-		raycaster.setFromCamera(mouse, img1.camera);
- 
-		var intersects = raycaster.intersectObjects(targetList);
-		if(intersects.length >0) {
-			window.location.href = "../nishiguchi/index.html";
-		}
-	};
-	
-	//立体音響の生成
-	function soundInit (){
-		var listener1 = new THREE.AudioListener();
-		img1.camera.add(listener1);
-		
-		var cube = new THREE.BoxGeometry(20,20,20);
-		//var textureLoader = new THREE.TextureLoader();
-		var material2 = new THREE.MeshBasicMaterial({
-			color : 0xffffff,
-			map: THREE.ImageUtils.loadTexture("../../assets/textures/animals/cat.jpg")
-		});
-		
-		var mesh1 = new THREE.Mesh(cube, material2);
-		mesh1.position.set(-70, -25, 60);
-		img1.scene.add(mesh1);
-		
-		console.log("mesh1:" + mesh1);
-		console.log("img1:" + img1);
-		
-	    cat = new THREE.Audio(listener1);
-		//cat.autoplay = true;
-	    cat.load("../../assets/audio/cat.ogg");
-	    cat.setRefDistance(100);
-	    cat.setLoop(true);
-	    cat.setRolloffFactor(2);
-	    mesh1.add(cat);
-
-		console.log("cat:" + cat);
-	}
-	
-	function soundCtrl(){
-		console.log("sound:" + cat);
-		if(cat.isPlaying){
-			cat.stop();
-		}
-		else{cat.play();}
-	}
-
-	
-</script>
 
 </body>
 </html>
