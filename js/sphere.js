@@ -1,37 +1,38 @@
-var myData = "";
-var img1;
-
-
 //JSONファイルの読み込み + アノテーションの作成
 function readJson(){
 	httpObj = new XMLHttpRequest();
 	httpObj.open("get", "annotation.json", true);
 	httpObj.onload = function(){
-		myData = JSON.parse(this.responseText);
+		var myData = JSON.parse(this.responseText);
 		console.log(myData);
-		
-		var text = "";
-		
-		text = text + "<div id=currentPanoramaImage onmouseover=document.all.item(\"explanatoryText\").style.visibility=\"visible\" onmouseout=document.all.item(\"explanatoryText\").style.visibility=\"hidden\">" + myData.currentPanoramaImage.displayName + "</div><br>"
-			   + "<div id=\"explanatoryText\" style=\"visibility:hidden\">" + myData.currentPanoramaImage.explanatoryText + "</div><br>";
-		document.getElementById("currentPanoramaImage").innerHTML += text;
-		
-		for(var i = 0; i < myData.aroundPanoramaImage.length; i++){
-			text = "";
-			text = text + "<a id=\"aroundPanoramaImage" + i + "\" href=\"" + myData.aroundPanoramaImage[i].path + "\">" + myData.aroundPanoramaImage[i].displayName + "</a><br>";
-			document.getElementById("aroundPanoramaImage").innerHTML += text;
-		}
-		
-		for(var i = 0; i < myData.sound.length; i++){
-			text = "";
-			text = text + "<p><input type=\"button\" value=\"" + myData.sound[i].displayName + "\" onclick=\"soundCtrl()\"></p><br>";
-			document.getElementById("sound").innerHTML += text;
-		}
+		makeAnnotation(myData);
+		setAroundPanoramaObject(myData);
+		setSound(myData);
 	}
 	httpObj.send(null);
-	console.log(myData);
 }
 
+
+function makeAnnotation(myData){
+	console.log(myData);
+	var text = "";
+	
+	text = text + "<div id=currentPanoramaImageText onmouseover=document.all.item(\"explanatoryText\").style.visibility=\"visible\" onmouseout=document.all.item(\"explanatoryText\").style.visibility=\"hidden\">" + myData.currentPanoramaImage.displayName + "</div><br>"
+		   + "<div id=\"explanatoryText\" style=\"visibility:hidden\">" + myData.currentPanoramaImage.explanatoryText + "</div><br>";
+	document.getElementById("currentPanoramaImage").innerHTML += text;
+	
+	for(var i = 0; i < myData.aroundPanoramaImage.length; i++){
+		text = "";
+		text = text + "<a id=\"aroundPanoramaImage" + i + "\" href=\"" + myData.aroundPanoramaImage[i].path + "\">" + myData.aroundPanoramaImage[i].displayName + "</a><br>";
+		document.getElementById("aroundPanoramaImage").innerHTML += text;
+	}
+	
+	for(var i = 0; i < myData.sound.length; i++){
+		text = "";
+		text = text + "<p><input type=\"button\" value=\"" + myData.sound[i].displayName + "\" onclick=\"soundCtrl(" + myData.sound[i].name + ")\"></p><br>";
+		document.getElementById("sound").innerHTML += text;
+	}
+}
 
 //現在地の全天球をセット
 function setCurrentPanoramaImage(){
@@ -50,21 +51,27 @@ function setCurrentPanoramaImage(){
 
 
 //周辺にある全天球のオブジェクトをセット + 全天球の切り替え処理
-function setAroundPanoramaObject(){
-	console.log(myData);
-	/*
+function setAroundPanoramaObject(myData){
 	var aroundPanoramaImage = myData.aroundPanoramaImage;
-	
-	*/
 	var targetList = []; 
 	var geometry1 = new THREE.SphereGeometry( 8, 30, 30 );
 	var material1 = new THREE.MeshBasicMaterial({color: 0x7fff00});
-	var sphere = new THREE.Mesh( geometry1, material1 );
-	sphere.position.set(-30,0,-52);
+	var sphere = [];
+	var coordinate = [];
 	
-	img1.scene.add( sphere );
-	
-	targetList.push(sphere);
+	for(i = 0; i < aroundPanoramaImage.length; i++){
+		//sphere[i] = aroundPanoramaImage[i].name;
+		coordinate[i] = aroundPanoramaImage[i].coordinate;
+		console.log("sphere:"+sphere[i]);
+		console.log("coordinate:"+coordinate[i]);
+		sphere[i] = new THREE.Mesh(geometry1, material1);
+		sphere[i].position.set(coordinate[i].x, coordinate[i].y, coordinate[i].z);
+		img1.scene.add(sphere[i]);
+		sphere[i].name = aroundPanoramaImage[i].name;
+		console.log(sphere[i]);
+		targetList.push(sphere[i]);
+	}
+
 	
 	//オブジェクトクリックによる全天球の切り替え処理
 	img1.element.onclick = function(e) {
@@ -84,99 +91,72 @@ function setAroundPanoramaObject(){
 		raycaster.setFromCamera(mouse, img1.camera);
  
 		var intersects = raycaster.intersectObjects(targetList);
-		if(intersects.length >0) {
-			window.location.href = "../nishiguchi/index.html";
+		console.log(raycaster);
+		console.log(intersects);
+		console.log(intersects[0].object.name);
+		console.log(targetList);
+		for(i = 0; i < targetList.length; i++){
+			if(intersects.length >0 && intersects[0].object.name == aroundPanoramaImage[i].name) {
+				window.location.href = aroundPanoramaImage[i].path;
+			}
 		}
 	};
 }
 
 
 //立体音響の生成
-function setSound (){
+function setSound (myData){
 	console.log(myData);
 	var sound = myData.sound;
 	console.log(sound);
-	console.log(sound.length);
-
+	var listener = [];
+	var mesh = [];
+	var coordinate = [];
+	var cube = new THREE.BoxGeometry(20,20,20);
+	var name = [];
 	for(var i = 0; i < sound.length; i++){
-		var listener = new THREE.AudioListener();
-		img1.camera.add(listener);
+		listener[i] = new THREE.AudioListener();
+		img1.camera.add(listener[i]);
 		
-		var cube = new THREE.BoxGeometry(20,20,20);
 		var material = new THREE.MeshBasicMaterial({
 			color : 0xffffff,
 			map: THREE.ImageUtils.loadTexture("../../assets/textures/animals/cat.jpg")
 		});
 		
-		var mesh = new THREE.Mesh(cube, material);
-		mesh.position.set(sound[i].coordinate.x, sound[i].coordinate.y, sound[i].coordinate.z);
-		img1.scene.add(mesh);
+		mesh[i] = new THREE.Mesh(cube, material);
+		coordinate[i] = sound[i].coordinate;
+		mesh[i].position.set(coordinate[i].x, coordinate[i].y, coordinate[i].z);
+		img1.scene.add(mesh[i]);
 		
-		console.log("mesh1:" + mesh);
-		console.log("img1:" + img1);
-		
-	    var cat = new THREE.Audio(listener);
-		cat.autoplay = true;
-	    cat.load(sound[0].path);
-	    cat.setRefDistance(100);
-	    cat.setLoop(true);
-	    cat.setRolloffFactor(2);
-	    mesh.add(cat);
+		name[i] = sound[i].name;
+		console.log(name[i]);
+	    name[i] = new THREE.Audio(listener[i]);
+		name[i].autoplay = true;
+	    name[i].load(sound[0].path);
+	    name[i].setRefDistance(100);
+	    name[i].setLoop(true);
+	    name[i].setRolloffFactor(2);
+	    mesh[i].add(name[i]);
 	}	
-	
-	
-	/*
-	var listener1 = new THREE.AudioListener();
-	img1.camera.add(listener1);
-	
-	var cube = new THREE.BoxGeometry(20,20,20);
-	//var textureLoader = new THREE.TextureLoader();
-	var material2 = new THREE.MeshBasicMaterial({
-		color : 0xffffff,
-		map: THREE.ImageUtils.loadTexture("../../assets/textures/animals/cat.jpg")
-	});
-	
-	var mesh1 = new THREE.Mesh(cube, material2);
-	mesh1.position.set(-70, -25, 60);
-	img1.scene.add(mesh1);
-	
-	console.log("mesh1:" + mesh1);
-	console.log("img1:" + img1);
-	
-    cat = new THREE.Audio(listener1);
-	//cat.autoplay = true;
-    cat.load("../../assets/audio/cat.ogg");
-    cat.setRefDistance(100);
-    cat.setLoop(true);
-    cat.setRolloffFactor(2);
-    mesh1.add(cat);
-
-	console.log("cat:" + cat);
-	*/
-
 }
 
 
 //音のオンオフ
 
-function soundCtrl(){
-	console.log("sound:" + cat);
-	if(cat.isPlaying){
-		cat.stop();
+function soundCtrl(soundName){
+	console.log("sound:" + soundName);
+	if(soundName.isPlaying){
+		soundName.stop();
 	}
-	else{cat.play();}
+	else{soundName.play();}
 }
 
 
-
-
 //処理の実行
+var img1;
 $(function (){
-
 	readJson();
 	setCurrentPanoramaImage();
-	setAroundPanoramaObject();
-	setSound();
 });
 
 

@@ -1,7 +1,7 @@
 {
 	"currentPanoramaImage": {
 		"name": "ekinaka",
-		"displayName": "金沢駅構内",
+		"displayName": "金沢駅西口奥",
 		"explanatoryText": "テスト"	
 	},
 	
@@ -15,16 +15,6 @@
 				"y": 0,
 				"z": -52
 			}
-		},
-		{
-			"name": "hunsui",
-			"displayName": "噴水",
-			"path": "/2016_intern/sphere/hunsui/index.html",
-			"coordinate": {
-				"x": -40,
-				"y": 0,
-				"z": 60
-				}
 		}
 	],
 	

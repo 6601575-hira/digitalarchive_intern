@@ -1,29 +1,19 @@
 {
 	"currentPanoramaImage": {
-		"name": "ekinaka",
-		"displayName": "金沢駅構内",
+		"name": "higashiguchi",
+		"displayName": "金沢駅東口",
 		"explanatoryText": "テスト"	
 	},
 	
 	"aroundPanoramaImage": [
 		{
-			"name": "nishiguchi",
-			"displayName": "金沢駅西口",
-			"path": "/2016_intern/sphere/nishiguchi/index.html",
+			"name": "hunsui",
+			"displayName": "金沢駅東口噴水",
+			"path": "/2016_intern/sphere/hunsui/index.html",
 			"coordinate": {
 				"x": -30,
 				"y": 0,
 				"z": -52
-			}
-		},
-		{
-			"name": "hunsui",
-			"displayName": "噴水",
-			"path": "/2016_intern/sphere/hunsui/index.html",
-			"coordinate": {
-				"x": -40,
-				"y": 0,
-				"z": 60
 				}
 		}
 	],

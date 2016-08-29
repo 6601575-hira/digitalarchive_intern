@@ -1,26 +1,37 @@
 #content{
 	position: relative;
+	width: 800px;
+	height: 400px;
 }
 
 #ph1{
-	z-index: 0;
+	position: absolute;
 }
 
 #currentPanoramaImage{
 	position: absolute;
 	top: 0px;
 	left:0px;
+}
+
+#currentPanoramaImageText{
+	position: relative;
+	top: 0px;
+	left: 0px;
 	font-family: Meirio;
 	font-size: 30px;
 	color: #ffffff;
-	background-color: rgba(0,0,0,0.55);
-	z-index: 1;
+	background-color: rgba(0,0,0,0.55);	
 }
 
 #explanatoryText{
 	position: absolute;
-	top: 200px;
+	top: 30px;
 	left: 0px;
+	font-family: Meirio;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.55);	
 }
 
 #aroundPanoramaImage{
@@ -32,6 +43,12 @@
 	color: #ffffff;
 	background-color: rgba(0,0,0,0.25);
 	
+}
+
+#sound{
+	position: absolute;
+	bottom: 0px;
+	right: 0px
 }
 
 a:link { color: #0000ff; }
