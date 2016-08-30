@@ -1,0 +1,37 @@
+{
+	"currentPanoramaImage": {
+		"name": "higashiguchi",
+		"displayName": "金沢駅東口",
+		"explanatoryText": "テスト"	
+	},
+	
+	"aroundPanoramaImage": [
+		{
+			"name": "hunsui",
+			"displayName": "金沢駅東口噴水",
+			"path": "/2016_intern/sphere/hunsui/index.html",
+			"coordinate": {
+				"x": 100,
+				"y": 10,
+				"z": 0
+				}
+		}
+	],
+	
+	"sound": [
+		{
+			"name": "cat",
+			"displayName": "にゃ～",
+			"type": "3dSound",
+			"volume": 1.2,
+			"path": "/2016_intern/assets/audio/cat.ogg",
+			"coordinate": {
+				"x": -70,
+				"y": -25,
+				"z": 60
+			}
+		}
+	]
+}
+
+

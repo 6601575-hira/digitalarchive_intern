@@ -4,75 +4,23 @@
 <script type="text/javascript" src="../../js/three.min.js"></script>
 <script type="text/javascript" src="../../js/thview.js"></script>
 <script src="../../js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="./js/read_json2.js"></script>
+<script src="../../assets/fonts/helvetiker_bold.typeface.js"></script>
+<script type="text/javascript" src="../../js/sphere.js"></script>
 <link rel="stylesheet" type="text/css" href="../../css/annotation.css">
 
 <title>ricoh intern</title>
 </head>
 <body>
 
-<div id="ph1">
-	<img id="tmp">
+<div id="content">
+	<div id="ph1">
+		<img id="tmp">
+	</div>
+	<div id="currentPanoramaImage"></div>
+	<div id="aroundPanoramaImage"></div>
+	<div id="sound"></div>
 </div>
 
-<div class="ano", id="pAno">
-	Current&nbsp;Panorama&nbsp;Image
-</div>
-<div class="ano", id="aAno">
-	<!--Around&nbsp;Panorama&nbsp;Image-->
-</div>
-
-
-<script type="text/javascript" >
-    
-	var img1 = new ThView({
-        	id:'ph1',
-        	file:'equirectangular.jpg',
-        	width:800,
-        	height:400,
-			firstview:150,
-			      });
-	img1.cameraDir.x = 0;
-	img1.cameraDir.y = 0;
-	img1.cameraDir.z = 0;
-	
-	var targetList = []; 		      
-	var geometry1 = new THREE.SphereGeometry( 8, 30, 30 );
-	var material1 = new THREE.MeshBasicMaterial({color: 0x7fff00});
-	var sphere = new THREE.Mesh( geometry1, material1 );
-	sphere.position.set(-30,0,-52);
-	
-	
-	img1.scene.add( sphere );		
-	
-	
-	targetList.push(sphere);
-	
-	
-	img1.element.onclick = function(e) {
-	
-	e.preventDefault();
-
-	var raycaster = new THREE.Raycaster();
-	
-	var rect = e.target.getBoundingClientRect();    
-	var mouse = new THREE.Vector2();
-       
-        mouse.x =  e.clientX - rect.left;
-        mouse.y =  e.clientY - rect.top;
-        
-
-		mouse.x =   (mouse.x / renderer.domElement.width) * 2 -1;
-		mouse.y = - (mouse.y / renderer.domElement.height) * 2 +1;
-		raycaster.setFromCamera(mouse, img1.camera);
- 
-		var intersects = raycaster.intersectObjects(targetList);
-		if(intersects.length >0) {
-  	   	          
-          window.location.href = "../hunsui/index.html";
-		}
-	};
-</script>
 
 </body>
 </html>
