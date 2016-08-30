@@ -32,12 +32,9 @@
 		{
 			"name": "cat",
 			"displayName": "にゃ～",
-			"path": "/2016_intern/assets/audio/cat.ogg",
-			"coordinate": {
-				"x": -70,
-				"y": -25,
-				"z": 60
-			}
+			"type": "environmentalSound",
+			"volume": 0.1,
+			"path": "/2016_intern/assets/audio/cat.ogg"
 		}
 	]
 }

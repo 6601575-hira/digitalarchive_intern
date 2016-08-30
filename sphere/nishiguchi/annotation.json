@@ -11,9 +11,9 @@
 			"displayName": "金沢駅西口奥",
 			"path": "/2016_intern/sphere/nishiguchioku/index.html",
 			"coordinate": {
-				"x": -30,
+				"x": 100,
 				"y": 0,
-				"z": -52
+				"z": 30
 			}
 		},
 		{
@@ -21,9 +21,9 @@
 			"displayName": "金沢駅構内",
 			"path": "/2016_intern/sphere/ekinaka/index.html",
 			"coordinate": {
-				"x": -40,
+				"x": -80,
 				"y": 0,
-				"z": 60
+				"z": 30
 				}
 		}
 	],
@@ -32,12 +32,9 @@
 		{
 			"name": "cat",
 			"displayName": "にゃ～",
-			"path": "/2016_intern/assets/audio/cat.ogg",
-			"coordinate": {
-				"x": -70,
-				"y": -25,
-				"z": 60
-			}
+			"type": "environmentalSound",
+			"volume": 0.3,
+			"path": "/2016_intern/assets/audio/cat.ogg"
 		}
 	]
 }

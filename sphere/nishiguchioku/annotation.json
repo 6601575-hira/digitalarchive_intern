@@ -11,9 +11,9 @@
 			"displayName": "金沢駅西口",
 			"path": "/2016_intern/sphere/nishiguchi/index.html",
 			"coordinate": {
-				"x": -30,
+				"x": 100,
 				"y": 0,
-				"z": -52
+				"z": 0
 			}
 		}
 	],
@@ -22,6 +22,8 @@
 		{
 			"name": "cat",
 			"displayName": "にゃ～",
+			"type": "3dSound",
+			"volume": 1.2,
 			"path": "/2016_intern/assets/audio/cat.ogg",
 			"coordinate": {
 				"x": -70,
