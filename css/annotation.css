@@ -8,13 +8,13 @@
 	position: absolute;
 }
 
-#currentPanoramaImage{
+#currentPanorama{
 	position: absolute;
 	top: 0px;
 	left:0px;
 }
 
-#currentPanoramaImageText{
+#currentPanoramaText{
 	position: relative;
 	top: 0px;
 	left: 0px;
@@ -34,7 +34,7 @@
 	background-color: rgba(0,0,0,0.55);	
 }
 
-#aroundPanoramaImage{
+#aroundPanorama{
 	position: absolute;
 	top: 0px;
 	right:0px;

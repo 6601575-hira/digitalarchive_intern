@@ -1,15 +1,14 @@
 {
-	"currentPanoramaImage": {
+	"currentPanorama": {
 		"name": "nishiguchi",
 		"displayName": "金沢駅西口",
-		"explanatoryText": "テスト"	
+		"explanatoryText": "テスト"
 	},
 	
-	"aroundPanoramaImage": [
+	"aroundPanorama": [
 		{
 			"name": "nishiguchioku",
-			"displayName": "金沢駅西口奥",
-			"path": "/2016_intern/sphere/nishiguchioku/index.html",
+			"path": "/2016_intern/sphere/nishiguchioku/",
 			"coordinate": {
 				"x": 100,
 				"y": 0,
@@ -18,23 +17,12 @@
 		},
 		{
 			"name": "ekinaka",
-			"displayName": "金沢駅構内",
-			"path": "/2016_intern/sphere/ekinaka/index.html",
+			"path": "/2016_intern/sphere/ekinaka/",
 			"coordinate": {
 				"x": -80,
 				"y": 0,
 				"z": 30
-				}
-		}
-	],
-	
-	"sound": [
-		{
-			"name": "cat",
-			"displayName": "にゃ～",
-			"type": "environmentalSound",
-			"volume": 0.3,
-			"path": "/2016_intern/assets/audio/cat.ogg"
+			}
 		}
 	]
 }
