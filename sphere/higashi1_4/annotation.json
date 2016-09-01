@@ -8,7 +8,7 @@
 	"aroundPanorama": [
 		{
 			"name": "higashi1_3",
-			"path": "/2016_intern/sphere/higashi1_3/",
+			"path": "/sphere/higashi1_3/",
 			"coordinate": {
 				"x": 80,
 				"y": 0,
@@ -17,7 +17,7 @@
 		},
 		{
 			"name": "higashi2_4",
-			"path": "/2016_intern/sphere/higashi2_4/",
+			"path": "/sphere/higashi2_4/",
 			"coordinate": {
 				"x": -90,
 				"y": 0,
