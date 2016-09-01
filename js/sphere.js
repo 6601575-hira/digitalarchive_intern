@@ -69,7 +69,7 @@ function makeAnnotation(currentPanorama, aroundPanorama, sound){
 
 //現在地の全天球をセット
 function setCurrentPanorama(name){
-	var imagePath = "/digitalarchive_intern/sphere/" + name + "equirectangular.jpg";
+	var imagePath = "/digitalarchive_intern/sphere/" + name + "/equirectangular.jpg";
 	img1 = new ThView({
         	id:'ph1',
         	file:imagePath,
