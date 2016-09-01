@@ -6,7 +6,6 @@ function readJson(path){
 		//カレントのJSON取得
 		if(currentFlag == true){
 			currentJsonData = JSON.parse(this.responseText);
-			setCurrentPanorama(currentJsonData.currentPanorama.name);
 			sound = currentJsonData.sound;
 			if(sound != undefined){sound.type = "here";}
 			for(i = 0; i < currentJsonData.aroundPanorama.length; i++){
@@ -68,11 +67,10 @@ function makeAnnotation(currentPanorama, aroundPanorama, sound){
 }
 
 //現在地の全天球をセット
-function setCurrentPanorama(name){
-	var imagePath = "/digitalarchive_intern/sphere/" + name + "/equirectangular.jpg";
+function setCurrentPanorama(){
 	img1 = new ThView({
         	id:'ph1',
-        	file:imagePath,
+        	file:'equirectangular.JPG',
         	width:window.innerWidth,
         	height:window.innerHeight,
 			firstview:150,
@@ -107,10 +105,10 @@ function setAroundPanoramaObject(myData){
 		
 		e.preventDefault();
 
-		var raycaster = new THREE.Raycaster();		
-		var rect = e.target.getBoundingClientRect();    
+		var raycaster = new THREE.Raycaster();
+		var rect = e.target.getBoundingClientRect();
 		var mouse = new THREE.Vector2();
-		console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
+		//console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
 
         mouse.x =  e.clientX - rect.left;
         mouse.y =  e.clientY - rect.top;
@@ -272,7 +270,7 @@ var path = "annotation.json";
 var sound;
 $(function (){
 	readJson(path);
-	//setCurrentPanorama(name);
+	setCurrentPanorama();
 });
 
 
