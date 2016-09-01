@@ -8,7 +8,7 @@
 	"aroundPanorama": [
 		{
 			"name": "higashi1_4",
-			"path": "/sphere/higashi1_4/",
+			"path": "/digitalarchive_intern/sphere/higashi1_4/",
 			"coordinate": {
 				"x": 75,
 				"y": 0,
@@ -17,7 +17,7 @@
 		},
 		{
 			"name": "higashi2_3",
-			"path": "/sphere/higashi2_3/",
+			"path": "/digitalarchive_intern/sphere/higashi2_3/",
 			"coordinate": {
 				"x": 90,
 				"y": 15,
@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "higashi3_4",
-			"path": "/sphere/higashi3_4/",
+			"path": "/digitalarchive_intern/sphere/higashi3_4/",
 			"coordinate": {
 				"x": -90,
 				"y": 0,
@@ -35,7 +35,7 @@
 		},
 		{
 			"name": "ekinaka",
-			"path": "/sphere/ekinaka/",
+			"path": "/digitalarchive_intern/sphere/ekinaka/",
 			"coordinate": {
 				"x": -10,
 				"y": 0,
