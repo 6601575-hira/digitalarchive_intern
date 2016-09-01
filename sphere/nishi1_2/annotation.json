@@ -8,7 +8,7 @@
 	"aroundPanorama": [
 		{
 			"name": "nishi1_1",
-			"path": "/sphere/nishi1_1/",
+			"path": "/digitalarchive_intern/sphere/nishi1_1/",
 			"coordinate": {
 				"x": -10,
 				"y": 0,
@@ -16,7 +16,7 @@
 			}
 		},{
 			"name": "nishi1_3",
-			"path": "/sphere/nishi1_3/",
+			"path": "/digitalarchive_intern/sphere/nishi1_3/",
 			"coordinate": {
 				"x": -20,
 				"y": 0,
@@ -24,7 +24,7 @@
 			}
 		},{
 			"name": "nishi2_2",
-			"path": "/sphere/nishi2_2/",
+			"path": "/digitalarchive_intern/sphere/nishi2_2/",
 			"coordinate": {
 				"x": -100,
 				"y": 0,
