@@ -1,0 +1,21 @@
+{
+	"currentPanorama": {
+		"name": "higashi1_1",
+		"displayName": "東口1_1",
+		"explanatoryText": ""
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi1_2",
+			"path": "/2016_intern/sphere/higashi1_2/",
+			"coordinate": {
+				"x": -12,
+				"y": 0,
+				"z": -90
+			}
+		}
+	]
+}
+
+

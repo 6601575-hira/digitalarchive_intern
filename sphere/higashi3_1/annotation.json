@@ -1,0 +1,39 @@
+{
+	"currentPanorama": {
+		"name": "higashi3_1",
+		"displayName": "東口3_1",
+		"explanatoryText": ""
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi2_1",
+			"path": "/2016_intern/sphere/higashi2_1/",
+			"coordinate": {
+				"x": 85,
+				"y": 0,
+				"z": 45
+			}
+		},
+		{
+			"name": "higashi2_2",
+			"path": "/2016_intern/sphere/higashi2_2/",
+			"coordinate": {
+				"x": 80,
+				"y": 0,
+				"z": -60
+			}
+		},
+		{
+			"name": "higashi3_2",
+			"path": "/2016_intern/sphere/higashi3_2/",
+			"coordinate": {
+				"x": 10,
+				"y": 0,
+				"z": -95
+			}
+		}
+	]
+}
+
+

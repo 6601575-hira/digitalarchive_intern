@@ -1,0 +1,30 @@
+{
+	"currentPanorama": {
+		"name": "nishi4_2",
+		"displayName": "西口4_2",
+		"explanatoryText": ""
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "nishi4_1",
+			"path": "/2016_intern/sphere/nishi4_1/",
+			"coordinate": {
+				"x": -20,
+				"y": 0,
+				"z": 100
+			}
+		},
+		{
+			"name": "nishi4_3",
+			"path": "/2016_intern/sphere/nishi4_3/",
+			"coordinate": {
+				"x": 0,
+				"y": 0,
+				"z": -100
+			}
+		}
+	]
+}
+
+

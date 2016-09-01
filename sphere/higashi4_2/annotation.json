@@ -1,0 +1,30 @@
+{
+	"currentPanorama": {
+		"name": "higashi4_2",
+		"displayName": "東口4_2",
+		"explanatoryText": "交番付近"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi4_1",
+			"path": "/2016_intern/sphere/higashi4_1/",
+			"coordinate": {
+				"x": 0,
+				"y": 0,
+				"z": 100
+			}
+		},
+		{
+			"name": "higashi4_3",
+			"path": "/2016_intern/sphere/higashi4_3/",
+			"coordinate": {
+				"x": 0,
+				"y": 0,
+				"z": -100
+			}
+		}
+	]
+}
+
+

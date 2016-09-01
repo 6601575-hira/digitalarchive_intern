@@ -1,0 +1,30 @@
+{
+	"currentPanorama": {
+		"name": "higashi4_4",
+		"displayName": "東口4_4",
+		"explanatoryText": "なぞのオブジェ(ポケストップ)"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi4_3",
+			"path": "/2016_intern/sphere/higashi4_3/",
+			"coordinate": {
+				"x": -50,
+				"y": 0,
+				"z": 90
+			}
+		},
+		{
+			"name": "higashi3_4",
+			"path": "/2016_intern/sphere/higashi3_4/",
+			"coordinate": {
+				"x": 100,
+				"y": 0,
+				"z": 0
+			}
+		}
+	]
+}
+
+

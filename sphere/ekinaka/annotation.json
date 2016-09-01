@@ -1,41 +1,38 @@
 {
-	"currentPanoramaImage": {
+	"currentPanorama": {
 		"name": "ekinaka",
 		"displayName": "金沢駅構内",
-		"explanatoryText": "テスト"	
+		"explanatoryText": "実はこれだけ去年撮った素材"
 	},
 	
-	"aroundPanoramaImage": [
+	"aroundPanorama": [
 		{
-			"name": "nishiguchi",
-			"displayName": "金沢駅西口",
-			"path": "/2016_intern/sphere/nishiguchi/index.html",
+			"name": "nishi3_1",
+			"path": "/2016_intern/sphere/nishi3_1/",
 			"coordinate": {
-				"x": -30,
+				"x": -50,
 				"y": 0,
-				"z": -52
+				"z": -80
 			}
 		},
 		{
-			"name": "hunsui",
-			"displayName": "噴水",
-			"path": "/2016_intern/sphere/hunsui/index.html",
+			"name": "higashi2_4",
+			"path": "/2016_intern/sphere/higashi2_4/",
 			"coordinate": {
-				"x": -40,
+				"x": -15,
 				"y": 0,
-				"z": 60
-				}
-		}
-	],
-	
-	"sound": [
+				"z": 100
+			}
+		},
 		{
-			"name": "cat",
-			"displayName": "にゃ～",
-			"type": "environmentalSound",
-			"volume": 0.1,
-			"path": "/2016_intern/assets/audio/cat.ogg"
-		}
+			"name": "higashi3_4",
+			"path": "/2016_intern/sphere/higashi3_4/",
+			"coordinate": {
+				"x": -60,
+				"y": 0,
+				"z": 80
+				}
+		}	
 	]
 }
 

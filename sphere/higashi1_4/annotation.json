@@ -1,0 +1,31 @@
+{
+	"currentPanorama": {
+		"name": "higashi1_4",
+		"displayName": "東口1_4",
+		"explanatoryText": "やかんのオブジェ(ポケストップ)"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi1_3",
+			"path": "/2016_intern/sphere/higashi1_3/",
+			"coordinate": {
+				"x": 80,
+				"y": 0,
+				"z": 60
+			}
+		},
+		{
+			"name": "higashi2_4",
+			"path": "/2016_intern/sphere/higashi2_4/",
+			"coordinate": {
+				"x": -90,
+				"y": 0,
+				"z": 40
+			}
+		}
+
+	]
+}
+
+

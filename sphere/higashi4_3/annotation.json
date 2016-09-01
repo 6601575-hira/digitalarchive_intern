@@ -1,0 +1,30 @@
+{
+	"currentPanorama": {
+		"name": "higashi4_3",
+		"displayName": "東口4_3",
+		"explanatoryText": "音楽堂前"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi4_2",
+			"path": "/2016_intern/sphere/higashi4_2/",
+			"coordinate": {
+				"x": 20,
+				"y": 0,
+				"z": 95
+			}
+		},
+		{
+			"name": "higashi4_4",
+			"path": "/2016_intern/sphere/higashi4_4/",
+			"coordinate": {
+				"x": 40,
+				"y": 0,
+				"z": -90
+			}
+		}
+	]
+}
+
+

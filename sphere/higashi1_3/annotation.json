@@ -1,0 +1,31 @@
+{
+	"currentPanorama": {
+		"name": "higashi1_3",
+		"displayName": "東口1_3",
+		"explanatoryText": "金沢FORUS前"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi1_2",
+			"path": "/2016_intern/sphere/higashi1_2/",
+			"coordinate": {
+				"x": 20,
+				"y": 0,
+				"z": 90
+			}
+		},
+		{
+			"name": "higashi1_4",
+			"path": "/2016_intern/sphere/higashi1_4/",
+			"coordinate": {
+				"x": -50,
+				"y": 0,
+				"z": -80
+			}
+		}
+
+	]
+}
+
+

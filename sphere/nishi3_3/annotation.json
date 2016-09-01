@@ -1,0 +1,48 @@
+{
+	"currentPanorama": {
+		"name": "nishi3_3",
+		"displayName": "西口3_3",
+		"explanatoryText": ""
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "nishi2_3",
+			"path": "/2016_intern/sphere/nishi2_3/",
+			"coordinate": {
+				"x": 90,
+				"y": 0,
+				"z": -35
+			}
+		},
+		{
+			"name": "nishi3_2",
+			"path": "/2016_intern/sphere/nishi3_2/",
+			"coordinate": {
+				"x": -20,
+				"y": 0,
+				"z": 100
+			}
+		},
+		{
+			"name": "nishi3_4",
+			"path": "/2016_intern/sphere/nishi3_4/",
+			"coordinate": {
+				"x": 15,
+				"y": 0,
+				"z": -100
+			}
+		},
+		{
+			"name": "nishi4_3",
+			"path": "/2016_intern/sphere/nishi4_3/",
+			"coordinate": {
+				"x": -95,
+				"y": 0,
+				"z": 25
+			}
+		}
+	]
+}
+
+

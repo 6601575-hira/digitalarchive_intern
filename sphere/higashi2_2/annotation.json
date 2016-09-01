@@ -1,0 +1,48 @@
+{
+	"currentPanorama": {
+		"name": "higashi2_2",
+		"displayName": "東口2_2",
+		"explanatoryText": "鼓門の柱の下"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi2_1",
+			"path": "/2016_intern/sphere/higashi2_1/",
+			"coordinate": {
+				"x": 50,
+				"y": 0,
+				"z": 90
+			}
+		},
+		{
+			"name": "higashi2_3",
+			"path": "/2016_intern/sphere/higashi2_3/",
+			"coordinate": {
+				"x": 60,
+				"y": 0,
+				"z": -80
+			}
+		},
+		{
+			"name": "higashi3_1",
+			"path": "/2016_intern/sphere/higashi3_1/",
+			"coordinate": {
+				"x": -55,
+				"y": 0,
+				"z": 80
+			}
+		},
+		{
+			"name": "higashi3_2",
+			"path": "/2016_intern/sphere/higashi3_2/",
+			"coordinate": {
+				"x": -100,
+				"y": 0,
+				"z": 0
+			}
+		}
+	]
+}
+
+

@@ -1,0 +1,21 @@
+{
+	"currentPanorama": {
+		"name": "higashi4_1",
+		"displayName": "東口4_1",
+		"explanatoryText": "ANAクラウンプラザホテル前"
+	},
+	
+	"aroundPanorama": [
+		{
+			"name": "higashi4_2",
+			"path": "/2016_intern/sphere/higashi4_2/",
+			"coordinate": {
+				"x": 40,
+				"y": 0,
+				"z": -90
+			}
+		}
+	]
+}
+
+
