@@ -76,7 +76,7 @@ function makeAnnotation(currentPanorama, aroundPanorama, sound){
 function setCurrentPanorama(){
 	img1 = new ThView({
         	id:'ph1',
-        	file:'equirectangular.jpg',
+        	file:'equirectangular.JPG',
         	width:window.innerWidth,
         	height:window.innerHeight,
 			firstview:150,
@@ -114,7 +114,7 @@ function setAroundPanoramaObject(myData){
 		var raycaster = new THREE.Raycaster();		
 		var rect = e.target.getBoundingClientRect();    
 		var mouse = new THREE.Vector2();
-		console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
+		//console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
 
         mouse.x =  e.clientX - rect.left;
         mouse.y =  e.clientY - rect.top;
