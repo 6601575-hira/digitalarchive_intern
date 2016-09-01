@@ -6,6 +6,7 @@ function readJson(path){
 		//カレントのJSON取得
 		if(currentFlag == true){
 			currentJsonData = JSON.parse(this.responseText);
+			setCurrentPanorama(currentJsonData.currentPanorama.name);
 			sound = currentJsonData.sound;
 			if(sound != undefined){sound.type = "here";}
 			for(i = 0; i < currentJsonData.aroundPanorama.length; i++){
@@ -67,10 +68,11 @@ function makeAnnotation(currentPanorama, aroundPanorama, sound){
 }
 
 //現在地の全天球をセット
-function setCurrentPanorama(){
+function setCurrentPanorama(name){
+	var imagePath = "/digitalarchive_intern/sphere/" + name + "equirectangular.jpg";
 	img1 = new ThView({
         	id:'ph1',
-        	file:'equirectangular.jpg',
+        	file:imagePath,
         	width:window.innerWidth,
         	height:window.innerHeight,
 			firstview:150,
@@ -270,8 +272,7 @@ var path = "annotation.json";
 var sound;
 $(function (){
 	readJson(path);
-	setCurrentPanorama();
-	//setInterval("soundControl()", 100);
+	//setCurrentPanorama(name);
 });
 
 
