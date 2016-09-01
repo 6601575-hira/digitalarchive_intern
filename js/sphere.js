@@ -199,13 +199,13 @@ function answer(){
 	var textMaterial = new THREE.MeshFaceMaterial(materialArray);
 	var textMesh = new THREE.Mesh(textGeometry, textMaterial );
 
-	textMesh.rotation.set(0, Math.PI/0.8, 0);
+	textMesh.rotation.set(0, Math.PI/0.9, 0);
 	textMesh.scale.x = 1.0;
 	textMesh.scale.y = 1.0;
 	textMesh.scale.z = 0.5;
-	textMesh.position.x = sound[0].coordinate.x + 20;
-	textMesh.position.y = sound[0].coordinate.y + 50;
-	textMesh.position.z = sound[0].coordinate.z - 20;
+	textMesh.position.x = sound[0].coordinate.x + 10;
+	textMesh.position.y = sound[0].coordinate.y + 40;
+	textMesh.position.z = sound[0].coordinate.z + 10;
 	img1.scene.add(textMesh);
 }
 
