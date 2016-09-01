@@ -23,7 +23,9 @@ function readJson(path){
 					sound.type = "next";
 					for(i = 0; i < currentJsonData.aroundPanorama.length; i++){
 						if(currentJsonData.aroundPanorama[i].name == str.currentPanorama.name){
-							sound[0].coordinate = ({x:0, y:0, z:0});
+							sound[0].coordinate = ({x:currentJsonData.aroundPanorama[i].coordinate.x,
+													y:currentJsonData.aroundPanorama[i].coordinate.y + 30,
+													z:currentJsonData.aroundPanorama[i].coordinate.z});
 						}
 					}
 				}
@@ -174,10 +176,10 @@ function setSound (soundData){
 			mesh[i].material.opacity = 0.1;
 			mesh[i].material.transparent = true;
 			mesh[i].position.y += 10;
-		    soundObject[i].gain.gain.value = 2.0;
+		    soundObject[i].gain.gain.value = 10.0;
 		}else if(soundData.type == "next"){
 			mesh[i].visible = false;
-		    soundObject[i].gain.gain.value = 0.8;
+		    soundObject[i].gain.gain.value = 1.5;
 		}
 
 		img1.scene.add(mesh[i]);
