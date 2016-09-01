@@ -45,24 +45,30 @@ function readJson(path){
 
 //アノテーションの作成
 function makeAnnotation(currentPanorama, aroundPanorama, sound){
+	//現在地の全天球
 	var text = "";
-	
 	text = text + "<div id=currentPanoramaText>" + currentPanorama.currentPanorama.displayName + "</div><br>"
 		   + "<div id=\"explanatoryText\">" + currentPanorama.currentPanorama.explanatoryText + "</div><br>";
 	document.getElementById("currentPanorama").innerHTML += text;
-	
+	//周辺の全天球
 	for(var i = 0; i < aroundPanorama.length; i++){
 		text = "";
 		text = text + "<a id=\"aroundPanorama" + i + "\" href=\"" + currentPanorama.aroundPanorama[i].path + "\">" + aroundPanorama[i] + "</a><br>";
 		document.getElementById("aroundPanorama").innerHTML += text;
 	}
+	//音関係
 	if(sound != undefined && sound.type == "here"){
 		for(var i = 0; i < sound.length; i++){
 			text = "";
-			text = text + "<p><input type=\"button\"value=\"\"onclick=changeOpacity(\""+sound[i].name+"\")></p><br>";
+			text = text + "<p><input type=\"button\"value=\"ねこじゃらし\"onclick=changeOpacity(\""+sound[i].name+"\")></p><br>";
 			text = text + "<p><input type=\"button\"value=\"Look\"onclick=lookSound("+sound[i].coordinate.x+","+sound[i].coordinate.y+","+sound[i].coordinate.z+")></p><br>";
 			document.getElementById("sound").innerHTML += text;
 		}
+	}else{
+		text = "";
+		text = text + "<p><input type=\"button\"value=\"ねこじゃらし\"></p><br>";
+		text = text + "<p><input type=\"button\"value=\"Look\"></p><br>";
+		document.getElementById("sound").innerHTML += text;
 	}
 }
 
@@ -70,7 +76,7 @@ function makeAnnotation(currentPanorama, aroundPanorama, sound){
 function setCurrentPanorama(){
 	img1 = new ThView({
         	id:'ph1',
-        	file:'equirectangular.JPG',
+        	file:'equirectangular.jpg',
         	width:window.innerWidth,
         	height:window.innerHeight,
 			firstview:150,
@@ -105,10 +111,10 @@ function setAroundPanoramaObject(myData){
 		
 		e.preventDefault();
 
-		var raycaster = new THREE.Raycaster();
-		var rect = e.target.getBoundingClientRect();
+		var raycaster = new THREE.Raycaster();		
+		var rect = e.target.getBoundingClientRect();    
 		var mouse = new THREE.Vector2();
-		//console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
+		console.log("pan:" + img1.pan + "\nscene:" + img1.scene.quatenion + "\ncameradir.x:" + img1.cameraDir.x+ "\ncameradir.y:" + img1.cameraDir.y+ "\ncameradir.z:" + img1.cameraDir.z);
 
         mouse.x =  e.clientX - rect.left;
         mouse.y =  e.clientY - rect.top;
@@ -197,13 +203,13 @@ function answer(){
 	var textMaterial = new THREE.MeshFaceMaterial(materialArray);
 	var textMesh = new THREE.Mesh(textGeometry, textMaterial );
 
-	textMesh.rotation.set(0, Math.PI/0.9, 0);
+	textMesh.rotation.set(0, Math.PI/0.8, 0);
 	textMesh.scale.x = 1.0;
 	textMesh.scale.y = 1.0;
 	textMesh.scale.z = 0.5;
-	textMesh.position.x = sound[0].coordinate.x + 10;
-	textMesh.position.y = sound[0].coordinate.y + 40;
-	textMesh.position.z = sound[0].coordinate.z + 10;
+	textMesh.position.x = sound[0].coordinate.x + 20;
+	textMesh.position.y = sound[0].coordinate.y + 50;
+	textMesh.position.z = sound[0].coordinate.z - 20;
 	img1.scene.add(textMesh);
 }
 
@@ -271,6 +277,7 @@ var sound;
 $(function (){
 	readJson(path);
 	setCurrentPanorama();
+	//setInterval("soundControl()", 100);
 });
 
 
