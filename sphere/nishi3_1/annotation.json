@@ -37,9 +37,9 @@
 			"name": "ekinaka",
 			"path": "/digitalarchive_intern/sphere/ekinaka/",
 			"coordinate": {
-				"x": 100,
+				"x": 0,
 				"y": 0,
-				"z": 0
+				"z": 100
 			}
 		}
 	]
