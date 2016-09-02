@@ -49,8 +49,8 @@ function readJson(path){
 function makeAnnotation(currentPanorama, aroundPanorama, sound){
 	//現在地の全天球
 	var text = "";
-	text = text + "<div id=currentPanoramaText>" + currentPanorama.currentPanorama.displayName + "</div><br>"
-		   + "<div id=\"explanatoryText\">" + currentPanorama.currentPanorama.explanatoryText + "</div><br>";
+	text = text + "<div id=currentPanoramaText>" + currentPanorama.currentPanorama.displayName + "</div>"
+		   + "<div id=\"explanatoryText\">" + currentPanorama.currentPanorama.explanatoryText + "</div>";
 	document.getElementById("currentPanorama").innerHTML += text;
 	//周辺の全天球
 	for(var i = 0; i < aroundPanorama.length; i++){

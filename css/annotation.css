@@ -10,26 +10,23 @@
 	position: absolute;
 	top: 0px;
 	left:0px;
+	font-family: Meirio;
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.55);
 }
 
 #currentPanoramaText{
 	position: relative;
 	top: 0px;
 	left: 0px;
-	font-family: Meirio;
 	font-size: 30px;
-	color: #ffffff;
-	background-color: rgba(0,0,0,0.55);	
 }
 
 #explanatoryText{
-	position: absolute;
+	position: rerative;
 	top: 30px;
 	left: 0px;
-	font-family: Meirio;
 	font-size: 20px;
-	color: #ffffff;
-	background-color: rgba(0,0,0,0.55);	
 }
 
 #aroundPanorama{
